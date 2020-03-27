@@ -1,0 +1,17 @@
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\XUnitTests.deps.json
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\XUnitTests.runtimeconfig.json
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\XUnitTests.runtimeconfig.dev.json
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\XUnitTests.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\XUnitTests.pdb
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\CsvFileLib.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\bin\Debug\netcoreapp2.2\CsvFileLib.pdb
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.csprojAssemblyReference.cache
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.csproj.CoreCompileInputs.cache
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.AssemblyInfoInputs.cache
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.AssemblyInfo.cs
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.csproj.CopyComplete
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.dll
+C:\ErmPower\ConsoleEPTest\XUnitTests\obj\Debug\netcoreapp2.2\XUnitTests.pdb
