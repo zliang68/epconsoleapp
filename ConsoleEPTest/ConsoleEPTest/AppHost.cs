@@ -27,39 +27,50 @@ namespace ConsoleEPTest
         /// </summary>
         /// <param name="csvFileSetting"></param>
         public void Run(CsvFileSetting csvFileSetting)
-        {            
-            var files = Directory.GetFiles(csvFileSetting.FilePath, "*.csv", SearchOption.TopDirectoryOnly);
-
-            foreach (var file in files)
+        {
+            Console.WriteLine($"Applcation start: {DateTime.Now}");
+            Console.WriteLine("------------------------------------------------------");
+            try
             {
-                var fileName = Path.GetFileName(file);
+                var files = Directory.GetFiles(csvFileSetting.FilePath, "*.csv", SearchOption.TopDirectoryOnly);
 
-                // Check file type
-                var isLpFile = fileName.StartsWith(csvFileSetting.LpFilePrefix);
-                var isTouFile = fileName.StartsWith(csvFileSetting.TouFilePrefix);
-
-                var records = isLpFile
-                    ? _csvParserService.ReadCsvFileToCsvModel(file, new LpMap())
-                    : isTouFile
-                        ? _csvParserService.ReadCsvFileToCsvModel(file, new TouMap())
-                        : new List<CsvModel>();
-
-                // Skip unknown CSV file
-                if (!records.Any())
+                foreach (var file in files)
                 {
-                    Console.WriteLine($"*** Unknown file type: {fileName}");
-                    continue;
+                    var fileName = Path.GetFileName(file);
+
+                    // Check file type
+                    var isLpFile = fileName.StartsWith(csvFileSetting.LpFilePrefix);
+                    var isTouFile = fileName.StartsWith(csvFileSetting.TouFilePrefix);
+
+                    var records = isLpFile
+                        ? _csvParserService.ReadCsvFileToCsvModel(file, new LpMap())
+                        : isTouFile
+                            ? _csvParserService.ReadCsvFileToCsvModel(file, new TouMap())
+                            : new List<CsvModel>();
+
+                    // Skip unknown CSV file
+                    if (!records.Any())
+                    {
+                        Console.WriteLine($"*** Unknown file type: {fileName}");
+                        continue;
+                    }
+
+                    // Filter records 
+                    var medianValue = _calculationService.GetMedianValue(records.Select(x => x.DataValue).ToList());
+
+                    var percentValue = csvFileSetting.DetectPercentage / 100.0;
+
+                    var exceedingRecords = _calculationService.GetExceedingRecords(records, medianValue, percentValue);
+
+                    // Display filtered records
+                    OutputRecords(fileName, exceedingRecords, medianValue);
                 }
-
-                // Filter records 
-                var medianValue = _calculationService.GetMedianValue(records.Select(x => x.DataValue).ToList());
-
-                var percentValue = csvFileSetting.DetectPercentage / 100.0;
-
-                var exceedingRecords = _calculationService.GetExceedingRecords(records, medianValue, percentValue);
-
-                // Display filtered records
-                OutputRecords(fileName, exceedingRecords, medianValue);
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"Application end: {DateTime.Now}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpect exception: {ex.Message}");
             }
         }
 
