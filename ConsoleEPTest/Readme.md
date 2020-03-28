@@ -10,25 +10,49 @@ The task is to:
 * Find exceeding values either 20% height than the median value of 20% lower than the median value
 * Display exceeding values to Console in following format (datetime from the record):
 ```
-fileName datetime dataValue medianValue 
+  fileName datetime dataValue medianValue 
 ```
 
-## This is a console program developed in .Net Core 2.202
+## Development Notes
 
-Visual Studio 2019 solution is used to develop the console program.
-
-## How to run the program
-
-Open the solution in Visual Studio 2019, update AppSetting.json to set CsvFilePath to path of target CSV file,
-* press F5 to run the program from Visual Studio; or
-* navigate to '.\ConsoleEPTest\bin\debug\netcoreapp2.2 folder, run: dotnet run ConsoleEPTest.dll
+This console application is developed in .Net Core 2.202 using Visual Studio 2019.
+* CSVHelper is used for CSV parsing
+* XUnit is used for unit testing
 
 ## Solution structure
 
 There are three projects in this solution:
-* ConsoleEPTest - contains main program using CsvFileLib;
-* CsvFileLib - contains constants, models and services;
-* UnitTests - Unit tests using CsvFileLib to test its services.
+* ConsoleEPTest - Main program to process files
+* CsvFileLib - A library defines constants, models and services 
+* UnitTests - Unit tests for this application
+
+### Configuration
+
+Appsetting.json is used to define configuration setting.
+```
+{
+  "CsvFile": {
+    "FilePath": "C:\\ErmPower\\SampleFiles",
+    "LpFilePrefix": "LP_",
+    "TouFilePrefix": "TOU_",
+    "DetectPercentage": 20
+  }
+}
+```
+
+## How to run this application
+
+### Within Visual Studio 
+* Open the solution in Visual Studio 2019, 
+* Update AppSetting.json to set CsvFilePath to path of target CSV file(s),
+* press F5 to run the program
+
+### From Commandline
+* Open a Command Prompt window;
+* Go to the folder containing ConsoleEPTest.dll, run following command: 
+```
+  dotnet run ConsoleEPTest.dll
+```
 
 ## Author
 
