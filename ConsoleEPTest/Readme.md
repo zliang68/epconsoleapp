@@ -1,4 +1,4 @@
-﻿# Erm Power Development Task 
+﻿# EP Development Task 
 
 Given a list of CSV files in two file types: LP and TOU
 * LP file value column header: 'Data Value'
