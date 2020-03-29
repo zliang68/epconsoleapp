@@ -49,9 +49,9 @@ Appsetting.json is used to define configuration setting.
 
 ### From Commandline
 * Open a Command Prompt window;
-* Go to the folder containing ConsoleEPTest.dll, run following command: 
+* Change directory into the folder ConsoleEPTest, run following command: 
 ```
-  dotnet run ConsoleEPTest.dll
+  dotnet run
 ```
 
 ## Author
