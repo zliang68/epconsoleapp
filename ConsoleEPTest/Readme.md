@@ -7,7 +7,7 @@ Given a list of CSV files in two file types: LP and TOU
 The task is to:
 
 * Calculate the median value of each file
-* Find exceeding values either 20% height than the median value or 20% lower than the median value
+* Find exceeding values either 20% higher than the median value or 20% lower than the median value
 * Display exceeding values to Console in following format (datetime from the record):
 ```
   fileName datetime dataValue medianValue 
