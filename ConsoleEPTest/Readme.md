@@ -1,4 +1,4 @@
-﻿# Erm Power Development Task 
+﻿# EP Development Task 
 
 Given a list of CSV files in two file types: LP and TOU
 * LP file value column header: 'Data Value'
@@ -15,9 +15,19 @@ The task is to:
 
 ## Development Notes
 
-This console application is developed in .Net Core 2.202 using Visual Studio 2019.
-* CSVHelper is used for CSV parsing
+This console application is developed in .NET Core 2.202 using Visual Studio 2019.
+* CSVHelper is used for CSV parsing  
 * XUnit is used for unit testing
+
+Only following two columns are needed in the CSV files, 
+* 'Date/Time' and 'Data Value' in 'LP' file type
+* 'Date/Time' and 'Energy' in 'TOU' file type
+
+CSVHelper is used to defined following ClassMaps to map above mentioned columns to a common CsvModel
+* LpMap for 'LP' file type 
+* TouMap for 'TOU' file type 
+
+Business logics are implemented in CsvFileLib library so that it can be used by unit tests project.
 
 ## Solution structure
 
@@ -47,11 +57,11 @@ Appsetting.json is used to define configuration setting.
 * Update AppSetting.json to set CsvFilePath to path of target CSV file(s),
 * press F5 to run the program
 
-### From Commandline
+### From commandline using .NET Core Cli
 * Open a Command Prompt window;
-* Go to the folder containing ConsoleEPTest.dll, run following command: 
+* Change directory to 'ConsoleEPTest' folder, run following command: 
 ```
-  dotnet run ConsoleEPTest.dll
+  dotnet run
 ```
 
 ## Author
