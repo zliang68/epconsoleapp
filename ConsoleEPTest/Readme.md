@@ -15,7 +15,7 @@ The task is to:
 
 ## Development Notes
 
-This console application is developed in .Net Core 2.202 using Visual Studio 2019.
+This console application is developed in .NET Core 2.202 using Visual Studio 2019.
 * CSVHelper is used for CSV parsing
 * XUnit is used for unit testing
 
@@ -47,7 +47,7 @@ Appsetting.json is used to define configuration setting.
 * Update AppSetting.json to set CsvFilePath to path of target CSV file(s),
 * press F5 to run the program
 
-### From Commandline
+### From commandline using .NET Core Cli
 * Open a Command Prompt window;
 * Change directory to 'ConsoleEPTest' folder, run following command: 
 ```
