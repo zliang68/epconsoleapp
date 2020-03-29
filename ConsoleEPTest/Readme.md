@@ -16,8 +16,18 @@ The task is to:
 ## Development Notes
 
 This console application is developed in .NET Core 2.202 using Visual Studio 2019.
-* CSVHelper is used for CSV parsing
+* CSVHelper is used for CSV parsing  
 * XUnit is used for unit testing
+
+Only following two columns are needed in the CSV files, 
+* 'Date/Time' and 'Data Value' in 'LP' file type
+* 'Date/Time' and 'Energy' in 'TOU' file type
+
+CSVHelper is used to defined following ClassMaps to map above mentioned columns to a common CsvModel
+* LpMap for 'LP' file type 
+* TouMap for 'TOU' file type 
+
+Business logics are implemented in CsvFileLib library so that it can be used by unit tests project.
 
 ## Solution structure
 
